@@ -1,5 +1,11 @@
+#
+# Setup file for the main game functionality.
+#
 import os
 
+from character import *
+from items import *
+from enemies import *
 #
 # Implementing functions for clear the terminal, and showing the Title.
 #
@@ -29,79 +35,25 @@ def showTitle():
 clearScreen()
 showTitle()
 
-#
-# Implementing basic Class for Characters.
-#
-class Character(object):
-    """Basic class for all the Characters in the game."""
+# user_name = input("Who do you think you are punk!?\n")
 
-    def __init__(self):
-        """
-            Initializes a Character object.
-            Attributes:
-                self.name (string, name of the character)
-                self.health (int, health points)
-                self.rage (int, rage points)
-                self.society (int, society points)
-        """
-        self.name = ''
-        self.health = 100
-        self.rage_points = 0
-        self.society_points = 0
-    #
-    # Implementing Getters.
-    #
-    def get_name(self):
-        """Method for safely access the name"""
-        return self.name
-
-    def get_health(self):
-        """Method for safely get the health points"""
-        return self.health
-
-    def get_rage_points(self):
-        """Method for safely get rage points"""
-        return self.rage_points
-
-    def get_society_points(self):
-        """Method for getting society points"""
-        return self.society_points    
-    #
-    # Implementing needed setters.
-    #
-    def set_name(self, _character_name):
-        """Method for safely setting character name"""
-        self.name = _character_name
-    
-    def set_rage_points(self, _rage_points):
-        """Method for safely setting Rage Points"""
-        self.rage_points = _rage_points
-    
-    def set_society_points(self, _society_points):
-        """Method for safely setting Society(xp) Points"""
-        self.society_points = _society_points
-
+# user_player = Player(user_name)
+# user_player.printStats()
 
 #
-# Implementing Player class, for the User's Player
-#
-class Player(Character):
-    """User's player class, inherits from Character class."""
-
-    def __init__(self, _username):
-        """
-            Initializes a Player object.
-            Attributes:
-                every attribute from Character-class objects.
-                setting name with the User's PlayerName.
-        """
-        Character.__init__(self)
-        self.set_name(_username)
-        
-
+# TODO, decide how the fights will take place. And how the whole game-story will be.
+# TODO, do i need getters, setters. I know is not the pythonic way, but maybe to keep them for now!?
 
 #
 # This code will be deleted.
 #
 user = Player("MakisDaDog!")
 print(user.get_name(), user.get_health(), user.get_rage_points(), user.get_society_points())
+test = Enemy("cop", 50, 30)
+print("you have :", user.get_health(), "of hp.")
+print("Your enemy is a crazy cop and ", test.get_ability())
+test.printStats()
+print(user.get_health())
+
+user.set_health(user.get_health() - test.get_rage_points())
+print(user.health)
