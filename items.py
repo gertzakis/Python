@@ -9,7 +9,7 @@ class Items(object):
             _attack_points(int, attack points of the item)
     """
 
-    def __init__(self, _name, _desc, _attack_points):
+    def __init__(self, _name, _desc, _attack_points, _rage_cost_points):
         """
             Initializes a Item object.
             Attributes:
@@ -20,6 +20,7 @@ class Items(object):
         self.name = _name
         self.desc = _desc
         self.attack_points = _attack_points
+        self.cost_points = _rage_cost_points
     #
     # Implementing Getters.
     #
@@ -34,6 +35,15 @@ class Items(object):
     def get_attack_points(self):
         """Methof for safely access the attack_points of the item."""
         return self.attack_points
+
+    def printStats(self):
+        """Method for printing weapon stats"""
+        print("\n")
+        print("Item '",self.name,"' statistics.")
+        print(self.desc)
+        print("Attack points:   ", self.attack_points)
+        print("Rage cost:       ", self.cost_points)
+        print("\n")
     
     #
     # Implementing Setters.
@@ -54,9 +64,9 @@ class Items(object):
 
 ITEMS = {
     # TODO, import more weapons for the Player, and decide if thats the best way to do it.
-    "yell"      : Items("Yell", "Scream to all the fuckers out there bruv!", 10),
-    "fists"     : Items("Fists", "Nothing that cannot be solved with a good fight!", 20),
-    "bottle"    : Items("Bottle", "Broken bottle after enjoying a lager!", 30),
-    "crowbar"   : Items("Crowbar", "Time to mess with some real fuckers!", 40),
-    "molotov"   : Items("Molotov", "Perfect for riots and football matches!", 50)
+    "yell"      : Items("Yell", "Scream to all the fuckers out there bruv!", 10, 0),
+    "fists"     : Items("Fists", "Nothing that cannot be solved with a good punch!", 20, 10),
+    "bottle"    : Items("Bottle", "Broken bottle after enjoying a lager!", 30, 20),
+    "crowbar"   : Items("Crowbar", "Time to mess with some real fuckers!", 40, 30),
+    "molotov"   : Items("Molotov", "Perfect for riots and football matches!", 50, 40)
 }

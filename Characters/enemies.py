@@ -1,4 +1,4 @@
-from character import *
+from Characters.character import *
 from items import *
 
 class Enemy(Character):
@@ -15,7 +15,7 @@ class Enemy(Character):
         self.set_society_points(_society_points)
         self.ability = ''
     #
-    # Implementing Getters.
+    # Implementing Getters and Setters.
     #    
     def get_ability(self):
         """Method for safely get the special ability of Enemies"""

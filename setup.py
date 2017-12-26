@@ -3,9 +3,10 @@
 #
 import os
 
-from character import *
+from Characters.character import *
+from Characters.player import *
+from Characters.enemies import *
 from items import *
-from enemies import *
 #
 # Implementing functions for clear the terminal, and showing the Title.
 #
@@ -42,7 +43,7 @@ showTitle()
 
 #
 # TODO, decide how the fights will take place. And how the whole game-story will be.
-# TODO, do i need getters, setters. I know is not the pythonic way, but maybe to keep them for now!?
+# TODO, do i need getters, setters. I know is NOT the pythonic way, but maybe to keep them for now!?
 
 #
 # This code will be deleted.
@@ -57,3 +58,5 @@ print(user.get_health())
 
 user.set_health(user.get_health() - test.get_rage_points())
 print(user.health)
+print(ITEMS['fists'].printStats())
+
