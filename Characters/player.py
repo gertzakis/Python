@@ -1,3 +1,6 @@
+#
+# File for the Player's class.
+#
 from Characters.character import *
 from items import *
 #

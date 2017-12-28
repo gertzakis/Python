@@ -1,3 +1,6 @@
+#
+# File for Enemy Class.
+#
 from Characters.character import *
 from items import *
 

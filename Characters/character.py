@@ -1,3 +1,6 @@
+#
+# File for the Character's class.
+#
 from items import *
 #
 # Implementing basic Class for Characters.

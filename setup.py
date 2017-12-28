@@ -3,9 +3,9 @@
 #
 import os
 
-from Characters.character import *
+import Characters
 from Characters.player import *
-from Characters.enemies import *
+from Characters.enemies import * 
 from items import *
 #
 # Implementing functions for clear the terminal, and showing the Title.
